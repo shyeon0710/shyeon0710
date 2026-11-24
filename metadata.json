@@ -1,0 +1,6 @@
+{
+  "name": "YES24 Creative Library",
+  "description": "대한민국 대표 인터넷서점 YES24 UX/UI 리뉴얼 — AI 맞춤 도서 추천, 실시간 베스트셀러, 크레마클럽 멤버십 및 장바구니",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

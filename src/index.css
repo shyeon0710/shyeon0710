@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Pretendard", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-brand: #0066FF;
+  --color-brand-dark: #0052CC;
+  --color-brand-light: #EFF6FF;
+  --color-brand-accent: #FF3B30;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 3D Book Cover Showcase */
+.book-container {
+  perspective: 1100px;
+}
+
+.book-cover {
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+  box-shadow: -12px 14px 28px rgba(15, 23, 42, 0.35), 0 0 6px rgba(15, 23, 42, 0.15);
+}
+
+.book-container:hover .book-cover {
+  transform: rotateY(-16deg) rotateX(5deg) scale(1.03);
+  box-shadow: -20px 22px 36px rgba(15, 23, 42, 0.45), 0 0 12px rgba(0, 102, 255, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-cover,
+  .book-container:hover .book-cover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Hide scrollbars for horizontal category rails */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(16px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-toast {
+  animation: slideInUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
